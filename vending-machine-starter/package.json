@@ -19,7 +19,9 @@
     "express-validator": "^3.2.1",
     "mongoose": "4.10.8",
     "morgan": "^1.8.2",
-    "mustache-express": "^1.2.5"
+    "mustache-express": "^1.2.5",
+    "pg": "^7.1.2",
+    "sequelize": "^4.4.10"
   },
   "devDependencies": {
     "jest": "^20.0.4",
