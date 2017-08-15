@@ -54,9 +54,6 @@ app.use(
   })
 );
 
-// Connect to Monogo
-mongoose.connect("mongodb://localhost:27017/CHANGEMEPLEASEEEEEEE");
-
 // **************** ROUTES ↓
 
 app.use("/", require("./routes/homepage"));

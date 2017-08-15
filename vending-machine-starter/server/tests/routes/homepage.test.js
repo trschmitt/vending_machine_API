@@ -4,7 +4,7 @@ const request = require("supertest");
 describe("Homepage router", () => {
   describe("GET /", () => {
     it("will return a status code of 200", () => {
-      request(app)
+      return request(app)
       .get("/")
       .expect(200)
       .expect((req) => {
