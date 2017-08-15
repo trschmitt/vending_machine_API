@@ -12,4 +12,16 @@ router.get("/api/customer/items", (req, res) => {
   })
 })
 
+router.post("/api/customer/items/:itemId/purchases", (req, res) => {
+  Item.create({
+    where: {
+      id: itemId
+    }
+  })
+  res.json({
+    status: "success"
+    data: Item
+  })
+})
+
 module.exports = router

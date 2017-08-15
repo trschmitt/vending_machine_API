@@ -11,10 +11,7 @@ module.exports = {
       name: {
         type: Sequelize.TEXT
       },
-      vendor_id: {
-        type: Sequelize.INTEGER
-      },
-      item_id: {
+      itemId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
