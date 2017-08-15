@@ -7,6 +7,13 @@ describe('Item router', () => {
       return request(app)
         .get("/api/customer/items")
         .expect(200);
-    })
-  })
-})
+    });
+    it('has a status key in json body', () => {
+      return request(app)
+        .get("/api/customer/items")
+        .then((res) =>{
+          expect(res.body.status).toEqual("success");
+        })
+    });
+  });
+});

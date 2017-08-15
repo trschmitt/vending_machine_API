@@ -55,9 +55,8 @@ app.use(
 );
 
 // **************** ROUTES ↓
-
 app.use("/", require("./routes/homepage"));
-
+app.use("/", require("./routes/items"));
 // **************** ROUTES ↑
 
 // Start the server if run directly
