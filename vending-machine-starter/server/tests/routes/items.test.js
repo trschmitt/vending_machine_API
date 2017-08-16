@@ -53,11 +53,11 @@ describe("Item router", () => {
 
     it("has a status key in json body", () => {
       return Item.create({
-          description: "Skittles",
-          cost: 75,
+          description: "GumDrops",
+          cost: 100,
           quantity: 20
         }).then(item => {
-          request(app).post("/api/customer/items/:itemId/purchases").then(res => {
+           request(app).post("/api/customer/items/:itemId/purchases").then(res => {
             expect(res.body.status).toEqual("success");
           });
       });
@@ -65,15 +65,16 @@ describe("Item router", () => {
 
     it("has an item from database", () => {
       return Item.create({
-        description: "Skittles",
-        cost: 75,
+        description: "Oreos",
+        cost: 99,
         quantity: 20
       }).then(item => {
-        return request(app).post("/api/customer/items/1/purchases")
-          .then(item => {
-            return Item.findById({id: 1 }).then(res => {
-              expect(res.body.data[0].id).toEqual(1);
-            });
+        Customer.create({
+          availableMoney: 100
+        }).then(customer => {
+          request(app)
+            .post(`/api/customer/items/${item.id}/purchases`, {})
+            .then(res.body.status).toBe("success")
         })
       });
     });

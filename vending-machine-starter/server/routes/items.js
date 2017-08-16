@@ -18,6 +18,8 @@ router.post("/api/customer/items/:itemId/purchases", (req, res) => {
       status: "success",
       data: item
     });
+  }).catch(err => {
+    throw(err); 
   });
 });
 
