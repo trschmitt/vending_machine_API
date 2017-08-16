@@ -75,7 +75,7 @@ describe("Item router", () => {
       });
     });
 
-    it("responds with status fail if customer doesnt have enough", () => {
+    it("responds with status fail if customer doesnt have enough money", () => {
       return Item.create({
         description: "Oreos",
         cost: 99,
