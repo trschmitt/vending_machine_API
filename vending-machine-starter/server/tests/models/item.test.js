@@ -2,7 +2,7 @@ const db = require('../../models');
 const Item = db.item;
 
 afterEach(() => {
-  return Item.destroy({ where: {} });
+  return Item.destroy({ where: {description: "Skittles"} });
 })
 
 describe('Item', ()=> {
